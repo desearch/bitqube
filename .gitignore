@@ -50,3 +50,120 @@ profile.cov
 logs/
 
 tests/spec-tests/
+
+# Dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+/vendor/
+/go.sum
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Build and distribution
+/dist/
+/build/
+/out/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Blockchain specific
+/keystore/
+*.sol.js
+/build/contracts/
+/deployments/
+/artifacts/
+/coverage/
+/coverage.json
+/typechain/
+/typechain-types/
+
+# Truffle
+.truffle/
+truffle-debug.log
+
+# Ganache
+.ganache/
+
+# Test coverage
+/coverage/
+*.lcov
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+tmp/
+temp/
+
+# Logs
+logs/
+*.log
+
+# Local development
+devchain/
+triedb/
+trie/
+
+# Documentation
+/docs/_build/
+/docs/_static/
+/docs/_templates/
+
+# System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Windows
+*.lnk
+*.url
+*.pdb
+*.user
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# macOS
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
