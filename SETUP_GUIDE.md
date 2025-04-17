@@ -82,6 +82,107 @@
    npx truffle test
    ```
 
+## Smart Contract Testing and Interaction
+
+### 1. Starting the Development Blockchain
+```bash
+# Start Ganache with custom configuration
+npx ganache --chain.chainId 1337 --chain.networkId 1337
+```
+The blockchain will run on:
+- Host: 127.0.0.1
+- Port: 8545
+
+### 2. Deploying Contracts
+```bash
+# Compile contracts
+npx truffle compile
+
+# Deploy to local network
+npx truffle migrate --network development
+```
+
+### 3. Setting Up MetaMask for Testing
+1. **Add Local Network**
+   - Open MetaMask
+   - Click network dropdown → "Add Network"
+   - Fill in:
+     ```
+     Network Name: Localhost 8545
+     RPC URL: http://127.0.0.1:8545
+     Chain ID: 1337
+     Currency Symbol: ETH
+     ```
+
+2. **Import Test Account**
+   - In MetaMask, click account icon → "Import Account"
+   - Choose "Private Key"
+   - Use the private key from Ganache output
+   - You should see 1000 test ETH in your account
+
+### 4. Running the Test Interface
+1. **Start the Web Server**
+   ```bash
+   # Using Python
+   python -m http.server 8080
+   
+   # Or using Node.js
+   npx http-server -p 8080
+   ```
+
+2. **Access the Interface**
+   - Open browser and go to: `http://localhost:8080`
+   - Connect MetaMask when prompted
+   - The interface will show:
+     - Contract address
+     - Buttons to get/set message and number
+     - Transaction status and results
+
+### 5. Testing the Contract
+1. **View Current Values**
+   - Click "Get Message" to see current message
+   - Click "Get Number" to see current number
+
+2. **Update Values**
+   - Enter new message in the text field and click "Set Message"
+   - Enter new number in the number field and click "Set Number"
+   - MetaMask will pop up to confirm transactions
+   - Wait for transaction confirmation
+   - Verify changes by clicking "Get Message" or "Get Number"
+
+### 6. Troubleshooting
+1. **MetaMask Connection Issues**
+   - Ensure MetaMask is connected to "Localhost 8545" network
+   - Check if Ganache is running
+   - Try refreshing the page and reconnecting MetaMask
+
+2. **Transaction Failures**
+   - Check if you have enough test ETH
+   - Verify contract address is correct
+   - Ensure MetaMask is using the correct network
+
+3. **Reading Values Fails**
+   - Verify contract ABI is correct
+   - Check if contract is properly deployed
+   - Ensure you're using the correct function names
+
+### 7. Contract Addresses
+- TestContract: `0xF28A22f1fc2a92218CEA4379bD025c784F355525`
+- Storage: `0x31d4bA89e0341E34A091Bc085dD7dC0cf6cB85D1`
+
+### 8. Additional Testing Tools
+1. **Truffle Console**
+   ```bash
+   npx truffle console --network development
+   ```
+   - Interact with contracts directly
+   - Test functions without web interface
+
+2. **Ganache Interface**
+   - View transaction history
+   - Monitor contract events
+   - Check account balances
+
 ## Development Tools
 
 1. **IDE Setup**
